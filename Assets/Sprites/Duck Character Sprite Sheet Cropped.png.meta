@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 8b8ae8f97f193bf489996b74b84f11b1
+guid: b356d3ea4e77b234d95ce40e073bb8df
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -9095717837082945937
-    second: Capsule
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -36,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -50,12 +47,12 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -66,14 +63,14 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,31 +90,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -144,96 +129,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Capsule
+      name: Duck Character Sprite Sheet Cropped_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 48
+        y: 432
+        width: 234
+        height: 232
+      alignment: 9
+      pivot: {x: 0.3791498, y: 0.73403275}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -33, y: 256}
-        - {x: -95, y: 223}
-        - {x: -128, y: 161}
-        - {x: -128, y: -161}
-        - {x: -95, y: -223}
-        - {x: -33, y: -256}
-        - {x: 33, y: -256}
-        - {x: 95, y: -223}
-        - {x: 128, y: -161}
-        - {x: 128, y: 161}
-        - {x: 95, y: 223}
-        - {x: 33, y: 256}
-      physicsShape:
-      - - {x: 0, y: 256}
-        - {x: -39, y: 249}
-        - {x: -75, y: 231}
-        - {x: -103, y: 203}
-        - {x: -121, y: 167}
-        - {x: -128, y: 128}
-        - {x: -128, y: -128}
-        - {x: -121, y: -167}
-        - {x: -103, y: -203}
-        - {x: -75, y: -231}
-        - {x: -39, y: -249}
-        - {x: 0, y: -256}
-        - {x: 39, y: -249}
-        - {x: 75, y: -231}
-        - {x: 103, y: -203}
-        - {x: 121, y: -167}
-        - {x: 128, y: -128}
-        - {x: 128, y: 128}
-        - {x: 121, y: 167}
-        - {x: 103, y: 203}
-        - {x: 75, y: 231}
-        - {x: 39, y: 249}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f669c7f71d485c180800000000000000
-      internalID: -9095717837082945937
+      spriteID: f7f9abdfd51e5644da2ad5579ed39111
+      internalID: 1498754646
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: -33, y: 256}
-      - {x: -95, y: 223}
-      - {x: -128, y: 161}
-      - {x: -128, y: -161}
-      - {x: -95, y: -223}
-      - {x: -33, y: -256}
-      - {x: 33, y: -256}
-      - {x: 95, y: -223}
-      - {x: 128, y: -161}
-      - {x: 128, y: 161}
-      - {x: 95, y: 223}
-      - {x: 33, y: 256}
-    physicsShape:
-    - - {x: 0, y: 256}
-      - {x: -39, y: 249}
-      - {x: -75, y: 231}
-      - {x: -103, y: 203}
-      - {x: -121, y: 167}
-      - {x: -128, y: 128}
-      - {x: -128, y: -128}
-      - {x: -121, y: -167}
-      - {x: -103, y: -203}
-      - {x: -75, y: -231}
-      - {x: -39, y: -249}
-      - {x: 0, y: -256}
-      - {x: 39, y: -249}
-      - {x: 75, y: -231}
-      - {x: 103, y: -203}
-      - {x: 121, y: -167}
-      - {x: 128, y: -128}
-      - {x: 128, y: 128}
-      - {x: 121, y: 167}
-      - {x: 103, y: 203}
-      - {x: 75, y: 231}
-      - {x: 39, y: 249}
+    - serializedVersion: 2
+      name: Duck Character Sprite Sheet Cropped_4
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 96
+        width: 413
+        height: 390
+      alignment: 9
+      pivot: {x: 0.54944056, y: 0.14486593}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b459862f4e642a340a99f4e627bf26c6
+      internalID: -1745368655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck Character Sprite Sheet Cropped_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 13
+        width: 192
+        height: 135
+      alignment: 9
+      pivot: {x: 0.37915072, y: 0.90428704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed1e5478669def44086b857047f55f14
+      internalID: 1649491924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck Character Sprite Sheet Cropped_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 155
+        width: 344
+        height: 270
+      alignment: 9
+      pivot: {x: 0.38705355, y: 0.5118276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c161ee4e449c82f478dd3d2513ce057f
+      internalID: 399214834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck Character Sprite Sheet Cropped_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 15
+        width: 177
+        height: 135
+      alignment: 9
+      pivot: {x: 0.31008938, y: 0.8750667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b12bdaad72d7a4498979dd34500fca
+      internalID: 1085802243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
@@ -243,7 +244,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Capsule: -9095717837082945937
+      Duck Character Sprite Sheet Cropped_0: 1498754646
+      Duck Character Sprite Sheet Cropped_1: 1085802243
+      Duck Character Sprite Sheet Cropped_2: -756211287
+      Duck Character Sprite Sheet Cropped_3: -709601591
+      Duck Character Sprite Sheet Cropped_4: -1745368655
+      Duck Character Sprite Sheet Cropped_5: 1649491924
+      Duck Character Sprite Sheet Cropped_6: 399214834
+      Duck Character Sprite Sheet Cropped_7: -883459418
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

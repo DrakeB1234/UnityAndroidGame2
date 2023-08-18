@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     private int jumpAmount; 
     [SerializeField] 
+    private int timeBeforeSprint; 
+    [SerializeField] 
     private Transform groundPos; 
     [SerializeField] 
     private LayerMask groundLayer; 

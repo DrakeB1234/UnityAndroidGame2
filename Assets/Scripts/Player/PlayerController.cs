@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private LayerMask groundLayer; 
 
     [SerializeField] 
-    private Animator playerAnimator; 
+    private Animator characterAnimator; 
 
     private Rigidbody2D rb;
     private float horizontalInput;
@@ -38,15 +38,12 @@ public class PlayerController : MonoBehaviour
         if (GroundCheck())
         {
             // Ensure player is not in jumping state
-            playerAnimator.SetBool("isJumping", false);
-
-            // Reset player jumps
-            jumpRemaining = jumpAmount;
+            characterAnimator.SetBool("isGrounded", false);
         }
         else
         {
             // Ensure player is in jumping state
-            playerAnimator.SetBool("isJumping", true);
+            characterAnimator.SetBool("isGrounded", true);
         }
     }
 
@@ -58,7 +55,7 @@ public class PlayerController : MonoBehaviour
         horizontalInput = val;
 
         // Set animator to walk animation
-        playerAnimator.SetBool("isRunning", true);
+        characterAnimator.SetBool("isRunning", true);
 
         // Flip character according to input value
         if (!isFacingRight && val < 0)
@@ -67,15 +64,24 @@ public class PlayerController : MonoBehaviour
             FlipPlayer();
         // Value is 0, set animator to idle animation
         else if (val == 0)
-            playerAnimator.SetBool("isRunning", false);
+            characterAnimator.SetBool("isRunning", false);
     }
 
     public void JumpPlayer(InputAction.CallbackContext context)
     {        
-        // If the player has remaining jumps
-        if (context.started && jumpRemaining > 0)
+        // If the player is on ground, reset jump amount
+        if (context.performed && GroundCheck())
         {
-            playerAnimator.SetTrigger("takeOff");
+            // Reset player jumps
+            jumpRemaining = jumpAmount;
+
+            characterAnimator.SetTrigger("takeOff");
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            jumpRemaining--;
+        }
+        else if (context.performed && jumpRemaining > 0)
+        {
+            characterAnimator.SetTrigger("takeOff");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpRemaining--;
         }

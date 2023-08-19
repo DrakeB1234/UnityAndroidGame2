@@ -1,23 +1,36 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerLife : MonoBehaviour
 {
     [SerializeField] 
     private int lifePointsMax; 
     [SerializeField] 
-    public GameObject healthRowUI;
+    private float respawnDelay; 
     [SerializeField] 
-    public GameObject eggHealthObj;
+    private GameObject healthRowUI;
+    [SerializeField] 
+    private GameObject eggHealthObj;
+    [SerializeField] 
+    private GameObject characterObj;
+    [SerializeField] 
+    private Animator characterAnimator;
 
     [SerializeField] 
-    public Transform currentSpawnPoint; 
+    private Transform currentSpawnPoint; 
 
     private int lifePoints;
+    private Rigidbody2D rb;
+    private PlayerInput playerInput;
 
     private void Awake() 
     {
         // Assign Player max health
         lifePoints = lifePointsMax;
+
+        // Get components from player
+        rb = GetComponent<Rigidbody2D>();
+        playerInput = gameObject.GetComponent<PlayerInput>();
 
         // Add health objs to player UI
         for (int i = 0; i < lifePoints; i++)
@@ -59,15 +72,44 @@ public class PlayerLife : MonoBehaviour
         if (lifePoints > 0)
         {
             UpdatePlayerHealthUI();
-
-            // Move player to current spawn point
-            transform.position = currentSpawnPoint.position;
         }
         else
         {
             UpdatePlayerHealthUI();
-            transform.position = currentSpawnPoint.position;
             Debug.Log("Outta Lives :()");
         }
+
+        // Hide player and stop physics
+        DisablePlayer();
+
+        Invoke("RespawnPlayer", respawnDelay);
+    }
+
+    private void RespawnPlayer()
+    {
+        // Move player to current spawn point
+        transform.position = currentSpawnPoint.position;
+
+        // Renable player
+        RenablePlayer();
+    }
+
+    private void DisablePlayer()
+    {
+        // Disable RB, set character obj unactive, reset animator values
+        rb.simulated = false;
+        characterObj.SetActive(false);
+
+        // Disable player controls
+        playerInput.DeactivateInput();
+    }
+
+    private void RenablePlayer()
+    {
+        rb.simulated = true;
+        characterObj.SetActive(true);
+
+        // Renable player controls
+        playerInput.ActivateInput();
     }
 }
